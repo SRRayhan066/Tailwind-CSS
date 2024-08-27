@@ -9,6 +9,9 @@ export default {
       fontFamily: {
         serif: ['Sacramento', 'sans-serif'], // Add 'Roboto' to the default sans-serif stack
       },
+      screens: {
+        'xs' : '480px'
+      }
     },
   },
   plugins: [],

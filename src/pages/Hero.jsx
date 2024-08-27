@@ -6,10 +6,10 @@ import { faPlay } from '@fortawesome/free-solid-svg-icons';
 
 const Hero = () => {
     return (
-        <div className='h-[715px] px-[250px] bg-gradient-to-b from-stone-900 via-stone-800 to-stone-900'>
+        <div className='h-[73vh] lg:px-[10vw] md:px-[5vw] xs:px-[2vw] bg-gradient-to-b from-stone-900 via-stone-800 to-stone-900'>
             <Navbar/>
 
-            <div className='flex justify-center items-center'>
+            {/* <div className='flex justify-center items-center'>
                 <div className='w-2/3'>
                     <h1 className='text-7xl text-white font-bold pr-[400px]'>Get body in <br/><span className='font-serif font-thin italic'>shape</span> & stay<br/> healthy</h1>
                     <div className='my-5'>
@@ -36,7 +36,7 @@ const Hero = () => {
                     <div className='absolute ml-[600px] z-1'>
                         <FontAwesomeIcon icon={faPlay} className='text-white' />
                     </div>
-            </div>
+            </div> */}
         </div>
     );
 };
