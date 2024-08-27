@@ -7,6 +7,7 @@ const App = () => {
   return (
     <div className='bg-stone-900'>
       <div className=''>
+        <Navbar/>
         <Hero/>
       </div>
     </div>  
