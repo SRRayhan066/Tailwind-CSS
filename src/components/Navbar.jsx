@@ -5,9 +5,14 @@ import { useState } from 'react';
 
 const Navbar = () => {
     const [isOpen,setIsOpen] = useState(false);
+    const [clickedItem,setClickedItem] = useState('home');
 
     const toggleMenu = () =>{
         setIsOpen(!isOpen);
+    }
+
+    const changedItem = (item) => () =>{
+        setClickedItem(item);
     }
 
     return (
@@ -15,12 +20,13 @@ const Navbar = () => {
             <div className='font-bold text-4xl italic text-orange-600'>
                 Fitness
             </div>
-            <div className={`md:hidden
-                             xs:${isOpen ? 'hidden' : 'block'} 
-                            text-white text-3xl`} onClick={toggleMenu}>
+            <div className={`md:hidden text-white text-3xl
+                             ${isOpen ? 'hidden' : 'block'} 
+                            `} onClick={toggleMenu}>
                 <FontAwesomeIcon icon={faBars} />
             </div>
-            <div className={`border-2 md:rounded-full xs:${isOpen ? 'block' : 'hidden'} md:block`}>
+
+            <div className={`border-2 md:rounded-full ${isOpen ? 'block' : 'hidden'} md:block`}>
                 <div className='flex justify-center items-center' onClick={toggleMenu}>
                     <FontAwesomeIcon className='md:hidden md:text-0 md:p-0
                                                 xs:text-xl xs:py-4
@@ -31,10 +37,10 @@ const Navbar = () => {
                                 md:flex md:space-x-5 md:space-y-0
                                 xs:text-lg xs:space-y-5
                               text-white '>
-                    <li className='bg-orange-600 md:rounded-full py-2'><a href='#' className='lg:px-4 md:px-2 xs:px-16'>Home</a></li>
-                    <li className='py-2'><a href='#' className='lg:px-4 md:px-2 xs:px-16'>Service</a></li>
-                    <li className='py-2'><a href='#' className='lg:px-4 md:px-2 xs:px-16'>Contact</a></li>
-                    <li className='py-2'><a href='#' className='lg:px-4 md:px-2 xs:px-16'>About</a></li>
+                    <li className={`${clickedItem==='home' ? 'bg-orange-600 md:rounded-full' : ''} py-2`} onClick={changedItem('home')}><a href='#' className='lg:px-4 md:px-2 xs:px-16'>Home</a></li>
+                    <li className={`${clickedItem==='service' ? 'bg-orange-600 md:rounded-full' : ''} py-2`} onClick={changedItem('service')}><a href='#' className='lg:px-4 md:px-2 xs:px-16'>Service</a></li>
+                    <li className={`${clickedItem==='contact' ? 'bg-orange-600 md:rounded-full' : ''} py-2`} onClick={changedItem('contact')}><a href='#' className='lg:px-4 md:px-2 xs:px-16'>Contact</a></li>
+                    <li className={`${clickedItem==='about' ? 'bg-orange-600 md:rounded-full' : ''} py-2`} onClick={changedItem('about')}><a href='#' className='lg:px-4 md:px-2 xs:px-16'>About</a></li>
                 </ul>
             </div>
         </div>
