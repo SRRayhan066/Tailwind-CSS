@@ -18,11 +18,11 @@ const Navbar = () => {
     return (
         <div className='relative flex justify-between py-[3rem] z-20 
                         '>
-            <div className='fixed font-bold text-4xl italic text-orange-600
+            <div className='absolute font-bold text-4xl italic text-orange-600
                             lg:left-[10vw] md:left-[10vw] xs:left-[5vw]'>
                 Fitness
             </div>
-            <div className={`fixed right-5 md:hidden text-white text-3xl
+            <div className={`absolute right-5 md:hidden text-white text-3xl
                              ${isOpen ? 'hidden' : 'block'} 
                             `} onClick={toggleMenu}>
                 <FontAwesomeIcon icon={faBars} />
@@ -31,7 +31,7 @@ const Navbar = () => {
             <div className={`border-2
                  lg:right-[10vw]
                  md:rounded-full ${isOpen ? 'block bg-stone-800' : 'hidden'} md:block md:right-[10vw]
-                 xs:fixed xs:right-[5vw]`}>
+                 xs:absolute xs:right-[5vw]`}>
                 <div className='flex justify-center items-center' onClick={toggleMenu}>
                     <FontAwesomeIcon className='md:hidden md:text-0 md:p-0
                                                 xs:text-xl xs:py-4
